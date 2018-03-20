@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="utf-8" />
+      <title>Test task</title>
+
+      <link rel="stylesheet" href="./build/styles/app.css"/>
+      <script src="./node_modules/vue/dist/vue.js"></script>
+      <script src="./build/js/main.js"></script>
+   </head>
+   <body>
+        <div id="app">
+            <header>
+                <div class="logo">
+                    <img src="./build/images/logo.png" alt="Logo"/>
+                    <span>Inform. Connect. Inspire.</span>
+                </div>
+                <nav>
+                    <menu>
+                        <li>
+                            <a href="#">Über uns</a>
+                        </li>
+                        <li>
+                            <a href="#">Redaktion</a>
+                        </li>
+                    </menu>
+                    <ul class="lang">
+                        <li class="active">
+                            <a href="#">DE</a>
+                        </li>
+                        <li>
+                            <a href="#">EN</a>
+                        </li>
+                    </ul>
+                </nav>
+            </header>
+            <nav>
+                <div class="search">
+                    <a class="button"></a>
+                </div>
+                <span class="menu-mobile" v-bind:class="{ active: isMenuMobileTrue }" @click="menuMobile"></span>
+                <menu>
+                    <li>
+                        <a href="#">Design+Lifestyle</a>
+                    </li>
+                    <li>
+                        <a href="#">Trends</a>
+                    </li>
+                    <li>
+                        <a href="#">Infodelight</a>
+                    </li>
+                    <li>
+                        <a href="#">Smart Living</a>
+                    </li>
+                </menu>
+            </nav>
+            <div id="container">
+                <div class="panel-sl">
+                    <div class="link">
+                        <a href="#">Design+Lifestyle</a>
+                        <a href="#">Smart Living</a>
+                    </div>
+                    <h2>Was hilft mir, Energie zu sparen und Spaß zu haben, bei mir zu Hause?</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut  dolor in reprehenderit in quia...</p>
+                    <div class="sl_nav">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span class="active"></span>
+                        <span></span>
+                    </div>
+                </div>
+                <div class="panel-lateral">
+                    <h2>A place called Inspiration.</h2>
+                    <p>Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam voluptatem.</p>
+                    
+                    <a class="btn" @click="DiagramTypeSelect">Diagramm Typ</a>
+                    <div v-show="isDiagramTypeSelectTrue">
+                        <ul>
+                            <todo-item v-for="item in diagramTypeList" v-bind:todo="item" v-bind:key="item.id"></todo-item>
+                        </ul>
+                    </div>
+                    <a href="" class="btn">Einfügen</a>
+                </div>
+                <div class="hr"></div>
+                <div class="panel-info-w50 panel-bg-0">
+                    <div class="link">
+                        <a href="#">Design+Lifestyle</a>
+                        <a href="#">Smart Living</a>
+                    </div>
+                    <h2>Was hilft mir, Energie zu sparen und Spaß zu haben, bei mir zu Hause?</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut  dolor in reprehenderit in quia...</p>
+                </div>
+                <div class="panel-info-w50 panel-bg-1">
+                    <div class="link">
+                        <a href="#">Design+Lifestyle</a>
+                        <a href="#">Smart Living</a>
+                    </div>
+                    <h2>Was hilft mir, Energie zu sparen und Spaß zu haben, bei mir zu Hause?</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut  dolor in reprehenderit in quia...</p>
+                </div>
+            </div>
+        </div>
+      
+   </body>
+</html>
