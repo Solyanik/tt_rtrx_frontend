@@ -288,7 +288,7 @@ body {
             }
             a {
                 border: 1px solid #ffffff;
-                width: 150px;
+                width: 175px;
                 height: 32px;
                 text-align: center;
                 line-height: 32px;
@@ -297,6 +297,30 @@ body {
                 text-transform: uppercase;
                 color: #fff;
                 font-size: 12px;
+
+                & + #diagram-type-select {
+                    border: 1px solid #fff;
+                    position: absolute;
+                    background: #fff;
+                    margin: -10px 0 0 35px;
+                    width: 175px;
+
+                    ul {
+                        list-style: none;
+                        padding: 0;
+                        margin: 0;
+                        text-align: center;
+
+                        li {
+                            padding: 10px 0;
+                            cursor: pointer;
+
+                            &:hover {
+                                background: #ccc;
+                            }
+                        }
+                    }
+                }
             }
         }
         .panel-sl {

@@ -6,6 +6,9 @@
 
       <link rel="stylesheet" href="./build/styles/app.css"/>
       <script src="./node_modules/vue/dist/vue.js"></script>
+      <script src="https://code.highcharts.com/highcharts.js"></script>
+      <script src="https://code.highcharts.com/modules/series-label.js"></script>
+      <script src="https://code.highcharts.com/modules/exporting.js"></script>
       <script src="./build/js/main.js"></script>
    </head>
    <body>
@@ -75,13 +78,13 @@
                     <h2>A place called Inspiration.</h2>
                     <p>Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam voluptatem.</p>
                     
-                    <a class="btn" @click="DiagramTypeSelect">Diagramm Typ</a>
-                    <div v-show="isDiagramTypeSelectTrue">
+                    <a class="btn" @click="ChartTypeSelect" v-text="chartTypeName"></a>
+                    <div id="diagram-type-select" v-show="isChartTypeSelectTrue">
                         <ul>
-                            <todo-item v-for="item in diagramTypeList" v-bind:todo="item" v-bind:key="item.id"></todo-item>
+                            <todo-item v-for="item in chartTypeList" v-bind:todo="item" v-bind:key="item.id"></todo-item>
                         </ul>
                     </div>
-                    <a href="" class="btn">Einfügen</a>
+                    <a @click="InsertChart" class="btn">Einfügen</a>
                 </div>
                 <div class="hr"></div>
                 <div class="panel-info-w50 panel-bg-0">
@@ -100,6 +103,9 @@
                     <h2>Was hilft mir, Energie zu sparen und Spaß zu haben, bei mir zu Hause?</h2>
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut  dolor in reprehenderit in quia...</p>
                 </div>
+                <div class="hr"></div>
+                <chart-item v-for="item in chartTypeList" v-bind:todo="item" v-bind:id="'chart-' + item.name" v-bind:type="item.name" v-bind:key="item.id" v-show="isChartTrue[item.name]"></chart-item>
+                <a name="chart"></a>
             </div>
         </div>
       
