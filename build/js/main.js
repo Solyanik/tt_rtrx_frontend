@@ -211,7 +211,7 @@ window.onload = function () {
             this.isChartTrue[this.chartTypeList[key].name] = true;
         }
 
-        setTimeout(window.scrollTo(0, document.body.scrollHeight), 200);
+        setTimeout("window.scrollTo(0, document.body.scrollHeight)", 500);
 
       }
     }
